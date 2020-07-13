@@ -1,0 +1,31 @@
+import React,{Component} from 'react';
+
+import { List } from 'antd';
+import SongItem from './SongItem.jsx'
+/***
+ * @列表
+ * */
+class SongList extends  Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+        };
+    }
+    render() {
+        return (
+            < List
+                itemLayout="horizontal"
+                dataSource={this.props.songs}
+                renderItem={song => {
+                    return (
+                        <SongItem key={song.link}
+                                  song={song}
+                                  showPlatform={this.props.showPlatform}
+                        />
+                    )
+                }}
+                className="song-list"/>
+        )
+    }
+}
+export default SongList;
