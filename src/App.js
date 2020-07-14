@@ -5,8 +5,9 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Theheader from './components/theHeader.jsx'
 import Hot from './components/Hot.jsx'
-const { Header, Footer, Sider, Content } = Layout;
+import Player from './components/Player'
 
+const { Header, Footer, Sider, Content } = Layout;
 
 
 
@@ -43,11 +44,12 @@ class App extends Component {
                           minHeight: 500,
                     }}
                   >
-                  <Switch>
-                    <Route exact path="/" component={Hot}/>
-                  </Switch>
+                      <Switch>
+                        <Route exact path="/" component={Hot}/>
+                      </Switch>
                 </div>
             </Content>
+          <Player />
           </Layout>
         </BrowserRouter>
     )

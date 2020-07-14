@@ -4,6 +4,9 @@ import { Row, Col } from 'antd';
 import { Link } from 'react-router-dom';
 import { GithubOutlined } from '@ant-design/icons';
 
+import SearchBar from './SearchBar/withDropdown';
+
+
 export default class TheHeader extends  Component{
     constructor(props) {
         super(props);
@@ -29,7 +32,7 @@ export default class TheHeader extends  Component{
                         </Link>
                     </Col>
                     <Col span={15}>
-                     搜索
+                        <SearchBar></SearchBar>
                     </Col>
                     <Col span={2} style={{ textAlign: 'right' }}>
                         <a href="/"

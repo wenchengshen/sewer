@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 
 import { Row, Col, Button } from 'antd';
 import { CaretRightOutlined } from '@ant-design/icons';
-
+import AddTo from './AddTo';
 
 class OperatingBarOfSongList extends  Component{
     constructor(props) {
@@ -21,8 +21,7 @@ class OperatingBarOfSongList extends  Component{
                     </Button>
                 </Col>
                 <Col>
-                    {/*<AddTo data={this.props.songs} />*/}
-                    添加歌曲
+                    <AddTo data={this.props.songs} />
                 </Col>
             </Row>
         )
