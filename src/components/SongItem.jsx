@@ -13,6 +13,8 @@ import xiamiMusicLogo from './images/xiami_16.ico';
 import kuwoMusicLogo from './images/kuwo_16.ico';
 
 
+import {connect} from 'react-redux'
+
 /***
  * @列表
  * */
@@ -20,9 +22,21 @@ class SongItem extends  Component{
     constructor(props) {
         super(props);
         this.state = {
+            song:this.props.song
         };
     }
+    componentDidMount() {
+    }
+
     changeCurrentSong(){
+        // const index = this.props.playingList.findIndex(song =>
+        //     song.link === this.props.song.link);
+        // if (index === -1) {
+        //     this.props.addToPlayingList(this.props.song);
+        //     this.props.updatePlayIndex(this.props.playingList.length);
+        // } else {
+        //     this.props.updatePlayIndex(index);
+        // }
 
     }
     render() {
@@ -96,4 +110,4 @@ const logos = {
   };
 
 
-export default SongItem;
+export default connect(state=>({loginConf:state.loginConf}))(SongItem);

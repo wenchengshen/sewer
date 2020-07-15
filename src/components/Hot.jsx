@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
 import {Layout,Menu} from "antd";
 import HotList from './HotList'
+import {connect} from 'react-redux'
 const { Sider, Content } = Layout;
+
 
 class Hot extends  Component{
     constructor(props) {
@@ -16,11 +18,13 @@ class Hot extends  Component{
         });
     }
     render() {
+        const {userName}=this.props.loginConf
         return (
                 <Layout style={{ background: 'white', padding: 10 }}>
                     <Sider style={{ background: 'none', marginRight: 20 }}
                     >
                         <h2>热歌榜</h2>
+                        <div> 用户名:{userName}  </div>
                         <Menu
                             defaultSelectedKeys={ ['netease'] }
                             mode="inline"
@@ -42,4 +46,4 @@ class Hot extends  Component{
         )
     }
 }
-export default Hot;
+export default connect(state=>({loginConf:state.loginConf}),null)(Hot);
